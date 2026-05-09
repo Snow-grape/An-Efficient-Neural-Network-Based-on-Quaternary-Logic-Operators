@@ -58,8 +58,8 @@ The final settings adopted in the paper are:
 
 ## 6. Figures
 
-- Fig. 2: impact of partitioning schemes and network depth
-- Fig. 3: trade-off between test accuracy and Stage 1 execution time under different \(M\) and \(|\mathcal{S}|\)
+- Fig. 1: impact of partitioning schemes and network depth
+- Fig. 2: trade-off between test accuracy and Stage 1 execution time under different \(M\) and \(|\mathcal{S}|\)
 
+![Fig. 1](figures/fig1.png)
 ![Fig. 2](figures/fig2.png)
-![Fig. 3](figures/fig3.png)
