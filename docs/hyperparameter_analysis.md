@@ -8,7 +8,7 @@ The hyperparameter study was conducted to determine the main structural settings
 
 - the number of QLO layers,
 - the input encoding partitioning scheme, and
-- the random search parameters, including the number of candidate QLOs \(M\) and the scoring subset size \(|\mathcal{S}|\).
+- the random search parameters, including the number of candidate QLOs $M$ and the scoring subset size $|\mathcal{S}|$.
 
 ## 2. Impact of Network Depth
 
@@ -21,7 +21,7 @@ This degradation is likely caused by the rapidly enlarged discrete search space 
 
 ## 3. Input Encoding Partitioning Scheme
 
-For MNIST, we compared three partitioning schemes for \(2\times2\) local patches:
+For MNIST, we compared three partitioning schemes for $2\times2$ local patches:
 
 - horizontal,
 - vertical,
@@ -31,21 +31,21 @@ Among them, vertical partitioning achieved the best classification accuracy. The
 
 ## 4. Candidate Gates and Scoring Subset Size
 
-We further studied the trade-off between accuracy and Stage 1 execution time under different values of \(M\) and \(|\mathcal{S}|\), where:
+We further studied the trade-off between accuracy and Stage 1 execution time under different values of $M$ and $|\mathcal{S}|$, where:
 
-- \(M\): number of candidate QLOs sampled for each neuron,
-- \(|\mathcal{S}|\): size of the sampled subset used for candidate evaluation.
+- $M$: number of candidate QLOs sampled for each neuron,
+- $|\mathcal{S}|$: size of the sampled subset used for candidate evaluation.
 
 The baseline setting without the search phase required 288.6 s for feature extraction and achieved 90.13% test accuracy. With the proposed lightweight search strategy, the best configuration was obtained at:
 
-- \(M=30\)
-- \(|\mathcal{S}|=50\)
+- $M=30$
+- $|\mathcal{S}|=50$
 
 Under this setting, the search overhead was 21.2 s, and the final test accuracy reached 95.51%.
 
-When \(M\) or \(|\mathcal{S}|\) was further increased, the performance gain became marginal and could even degrade slightly. For example, using \(M=100\) or \(|\mathcal{S}|=500\) reduced the final test accuracy to 94.84%. This suggests that overly aggressive search may overfit the lightweight scoring procedure and generalize less effectively in later layers.
+When $M$ or $|\mathcal{S}|$ was further increased, the performance gain became marginal and could even degrade slightly. For example, using $M=100$ or $|\mathcal{S}|=500$ reduced the final test accuracy to 94.84%. This suggests that overly aggressive search may overfit the lightweight scoring procedure and generalize less effectively in later layers.
 
-Therefore, \(M=30\) and \(|\mathcal{S}|=50\) were used in all experiments reported in the paper.
+Therefore, $M=30$ and $|\mathcal{S}|=50$ were used in all experiments reported in the paper.
 
 ## 5. Final Hyperparameter Choices Used in the Paper
 
@@ -53,13 +53,13 @@ The final settings adopted in the paper are:
 
 - Number of QLO layers: 2
 - Partitioning scheme for image inputs: vertical
-- Number of candidate QLOs per neuron: \(M=30\)
-- Scoring subset size: \(|\mathcal{S}|=50\)
+- Number of candidate QLOs per neuron: $M=30$
+- Scoring subset size: $|\mathcal{S}|=50$
 
 ## 6. Figures
 
 - Fig. 1: impact of partitioning schemes and network depth
-- Fig. 2: trade-off between test accuracy and Stage 1 execution time under different \(M\) and \(|\mathcal{S}|\)
+- Fig. 2: trade-off between test accuracy and Stage 1 execution time under different $M$ and $|\mathcal{S}|$
 
 ![Fig. 1](figures/fig1.png)
 ![Fig. 2](figures/fig2.png)
